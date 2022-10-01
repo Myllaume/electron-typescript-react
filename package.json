@@ -1,0 +1,36 @@
+{
+  "name": "electron-typescript-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ./dist/index.js",
+    "ts": "./node_modules/.bin/tsc -w"
+  },
+  "author": "Guillaume Brioudes <https://myllaume.fr/>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.3.0"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^4.9.0",
+    "babel-loader": "^8.2.5",
+    "style-loader": "^3.3.1",
+    "css-loader": "^6.7.1",
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@faker-js/faker": "^6.3.1",
+    "@types/node": "^18.0.0",
+    "@types/react": "^18.0.14",
+    "@types/react-dom": "^18.0.5",
+    "@types/webpack": "^5.28.0",
+    "electron": "^18.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.7.4",
+    "webpack": "^5.72.0"
+  }
+}
