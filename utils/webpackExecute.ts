@@ -1,9 +1,12 @@
 import * as webpack from 'webpack';
+import { app } from 'electron';
 import configWebpack from './webpack.config';
 
 const configWebpackProd: webpack.Configuration = { ...configWebpack, mode: 'production' };
 
 function execute () {
+    if (app.isPackaged) { return true; }
+
     return new Promise((resolve, reject) => {
         webpack(
             configWebpackProd,
@@ -26,4 +29,4 @@ function execute () {
     })
 }
 
-execute();
+export default execute;

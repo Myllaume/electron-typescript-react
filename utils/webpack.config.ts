@@ -24,7 +24,6 @@ const config: Configuration = {
         ...['main'].map(entry => {
             return new HtmlWebpackPlugin({
                 filename: `${entry}.html`,
-                title: entry,
                 template: path.join(__dirname, '../../views/template.html'),
                 chunks: [entry]
             })

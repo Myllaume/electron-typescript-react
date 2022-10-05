@@ -6,20 +6,19 @@ import configDevServer from './webpack.server';
 
 
 export default async function runServer () {
-    if (app.isPackaged === true) {
-        return true;
-    }
-
-    const compiler = await webpack(configWebpack)
-        , server = new WebpackDevServer(configDevServer, compiler);
+    if (app.isPackaged) { return true; }
 
     return new Promise(async (resolve, reject) => {
+        const compiler = await webpack({ ...configWebpack, mode: 'development' })
+            , server = new WebpackDevServer(configDevServer, compiler);
+
         try {
             await server.start();
         } catch (error) {
             await server.stop();
             reject(error);
         }
+
         resolve(server);
     })
 }

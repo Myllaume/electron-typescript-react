@@ -1,10 +1,11 @@
 import { createRoot } from 'react-dom/client'
-import React from 'react'
+import * as React from "react" 
 
+import Welcome from './components/Welcome';
 import '../main.css';
 
-const root = createRoot(document.getElementById('root')!);
+const root = createRoot(document.getElementById('root'));
 
 root.render(
-    <>cozcou</>
+    <Welcome occurences={23} />
 );

@@ -1,12 +1,16 @@
 import { app } from 'electron';
 import webpackServe from './utils/webpackServe';
-// import mainWindow from '../windows/main';
+import webpackExecute from './utils/webpackExecute';
+import mainWindow from './views/main/window';
 
-Promise.all([webpackServe(), app.whenReady()])
+Promise.all([webpackExecute(), webpackServe(), app.whenReady()])
     .then(([webpackServeControl, _]) => {
+        console.log('Application lancée');
+        
+        
+        mainWindow.open();
         // mainWindow();
         // webpackServeControl.close();
-        
     })
     .catch((err) => {
         console.error(err);
